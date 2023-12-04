@@ -5,7 +5,9 @@
 package main;
 
 import DLS.DepthLimitedSearch;
+import UCS.NodeUCS;
 import node.Node;
+import UCS.UniformCostSearch;
 /**
  *
  * @author syhnn
@@ -50,6 +52,64 @@ public class Main {
         DepthLimitedSearch dls = new DepthLimitedSearch();
         dls.setLimit(5);
         dls.search(setbud, lengkong);
+        System.out.println();
+
+        NodeUCS setbudUCS = new NodeUCS(setbud, 205);
+        NodeUCS lengkongUCS = new NodeUCS(lengkong, 0);
+        NodeUCS pvjUCS = new NodeUCS(pvj, 100);
+        NodeUCS herminaUCS = new NodeUCS(hermina,50);
+        NodeUCS cikapundungUCS = new NodeUCS(cikapundung, 300);
+        NodeUCS itbUCS = new NodeUCS(itb, 70);
+        NodeUCS puskesmasUCS = new NodeUCS(puskesmas, 99);
+        NodeUCS tamsarUCS = new NodeUCS(tamsar, 77);
+        NodeUCS sumateraUCS = new NodeUCS(sumatera, 87);
+        NodeUCS alunalunUCS = new NodeUCS(alunalun, 64);
+        NodeUCS tegalegaUCS = new NodeUCS(tegalega, 39);
+
+        setbudUCS.addTetangga(pvjUCS);
+        setbudUCS.addTetangga(herminaUCS);
+
+        pvjUCS.addTetangga(setbudUCS);
+        pvjUCS.addTetangga(cikapundungUCS);
+        pvjUCS.addTetangga(puskesmasUCS);
+
+        herminaUCS.addTetangga(setbudUCS);
+        herminaUCS.addTetangga(puskesmasUCS);
+
+        puskesmasUCS.addTetangga(herminaUCS);
+        puskesmasUCS.addTetangga(pvjUCS);
+        puskesmasUCS.addTetangga(tamsarUCS);
+        puskesmasUCS.addTetangga(tegalegaUCS);
+
+        cikapundungUCS.addTetangga(pvjUCS);
+        cikapundungUCS.addTetangga(itbUCS);
+
+        itbUCS.addTetangga(cikapundungUCS);
+        itbUCS.addTetangga(tamsarUCS);
+        itbUCS.addTetangga(sumateraUCS);
+
+        tamsarUCS.addTetangga(sumateraUCS);
+        tamsarUCS.addTetangga(itbUCS);
+        tamsarUCS.addTetangga(puskesmasUCS);
+        tamsarUCS.addTetangga(alunalunUCS);
+
+        alunalunUCS.addTetangga(tamsarUCS);
+        alunalunUCS.addTetangga(lengkongUCS);
+        alunalunUCS.addTetangga(sumateraUCS);
+
+        sumateraUCS.addTetangga(tamsarUCS);
+        sumateraUCS.addTetangga(alunalunUCS);
+        sumateraUCS.addTetangga(lengkongUCS);
+
+        lengkongUCS.addTetangga(alunalunUCS);
+        lengkongUCS.addTetangga(sumateraUCS);
+
+        tegalegaUCS.addTetangga(lengkongUCS);
+        tegalegaUCS.addTetangga(puskesmasUCS);
+
+        System.out.println("UCS");
+        UniformCostSearch ucs = new UniformCostSearch();
+        ucs.search(setbudUCS, lengkongUCS);
         System.out.println();
     }
 }
