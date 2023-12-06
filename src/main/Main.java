@@ -4,6 +4,7 @@
  */
 package main;
 
+import BFS.BreadthFirstSearch;
 import DLS.DepthLimitedSearch;
 import UCS.NodeUCS;
 import node.Node;
@@ -47,6 +48,11 @@ public class Main {
         lengkong.addTetangga(tegalega);
         lengkong.addTetangga(sumatera);
         lengkong.addTetangga(alunalun);
+
+        System.out.println("BFS");
+        BreadthFirstSearch bfs = new BreadthFirstSearch();
+        bfs.search(setbud, lengkong);
+        System.out.println();
         
         System.out.println("DLS");
         DepthLimitedSearch dls = new DepthLimitedSearch();
