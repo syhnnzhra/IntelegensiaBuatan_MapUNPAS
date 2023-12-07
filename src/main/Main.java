@@ -56,7 +56,7 @@ public class Main {
         
         System.out.println("DLS");
         DepthLimitedSearch dls = new DepthLimitedSearch();
-        dls.setLimit(5);
+        dls.setLimit(6);
         dls.search(setbud, lengkong);
         System.out.println();
 

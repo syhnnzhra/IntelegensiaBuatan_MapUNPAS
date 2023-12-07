@@ -8,7 +8,8 @@ public class Solusi {
     private Node node;
 
     public Solusi() {
-        nodes = (List<Node>) new ArrayList(nodes);
+//        nodes = (List<Node>) new ArrayList(nodes);
+nodes = new ArrayList<>();
     }
 
     public void setNode(Node node) {
@@ -20,7 +21,8 @@ public class Solusi {
     }
 
     public void setNodes(List<Node> nodes) {
-        this.nodes = (List<Node>) new ArrayList(nodes);
+//        this.nodes = (List<Node>) new ArrayList(nodes);
+this.nodes = new ArrayList<>(nodes);
     }
 
     public List<Node> getNodes() {
