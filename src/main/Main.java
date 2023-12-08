@@ -60,17 +60,17 @@ public class Main {
         dls.search(setbud, lengkong);
         System.out.println();
 
-        NodeUCS setbudUCS = new NodeUCS(setbud, 205);
+        NodeUCS setbudUCS = new NodeUCS(setbud, 82);
         NodeUCS lengkongUCS = new NodeUCS(lengkong, 0);
-        NodeUCS pvjUCS = new NodeUCS(pvj, 100);
-        NodeUCS herminaUCS = new NodeUCS(hermina,50);
-        NodeUCS cikapundungUCS = new NodeUCS(cikapundung, 300);
-        NodeUCS itbUCS = new NodeUCS(itb, 70);
-        NodeUCS puskesmasUCS = new NodeUCS(puskesmas, 99);
-        NodeUCS tamsarUCS = new NodeUCS(tamsar, 77);
-        NodeUCS sumateraUCS = new NodeUCS(sumatera, 87);
-        NodeUCS alunalunUCS = new NodeUCS(alunalun, 64);
-        NodeUCS tegalegaUCS = new NodeUCS(tegalega, 39);
+        NodeUCS pvjUCS = new NodeUCS(pvj, 73);
+        NodeUCS herminaUCS = new NodeUCS(hermina,78);
+        NodeUCS cikapundungUCS = new NodeUCS(cikapundung, 59);
+        NodeUCS itbUCS = new NodeUCS(itb, 53);
+        NodeUCS puskesmasUCS = new NodeUCS(puskesmas, 95);
+        NodeUCS tamsarUCS = new NodeUCS(tamsar, 31);
+        NodeUCS sumateraUCS = new NodeUCS(sumatera, 27);
+        NodeUCS alunalunUCS = new NodeUCS(alunalun, 20);
+        NodeUCS tegalegaUCS = new NodeUCS(tegalega, 22);
 
         setbudUCS.addTetangga(pvjUCS);
         setbudUCS.addTetangga(herminaUCS);
@@ -109,6 +109,7 @@ public class Main {
 
         lengkongUCS.addTetangga(alunalunUCS);
         lengkongUCS.addTetangga(sumateraUCS);
+        lengkongUCS.addTetangga(itbUCS);
 
         tegalegaUCS.addTetangga(lengkongUCS);
         tegalegaUCS.addTetangga(puskesmasUCS);
